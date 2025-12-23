@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Sounds Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #1a1a2e;
+            color: white;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        button, .test-button {
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #4ecdc4;
+            background: transparent;
+            color: white;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        button:hover, .test-button:hover {
+            background: #4ecdc4;
+            color: #1a1a2e;
+        }
+        .status {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(78, 205, 196, 0.2);
+            border-radius: 5px;
+        }
+        .warning {
+            background: rgba(255, 159, 64, 0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔊 UI Sounds Test Page</h1>
+    
+    <div class="warning">
+        <strong>Note:</strong> This test page checks if the sound system is working correctly. 
+        You'll hear console warnings about missing sound files until you add your actual sound files 
+        to <code>assets/sounds/</code> directory.
+    </div>
+
+    <div class="test-section">
+        <h2>Sound System Status</h2>
+        <div class="status" id="status">
+            Initializing...
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Buttons</h2>
+        <p>Hover over these buttons to hear the hover sound. Click them to hear the click sound.</p>
+        <button>Button 1</button>
+        <button class="test-button">Button 2</button>
+        <div>
+            <a href="#" class="test-button" style="display: inline-block; text-decoration: none;">Link Button</a>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Sound Controls</h2>
+        <button onclick="toggleSounds()">Toggle Sounds On/Off</button>
+        <button onclick="changeVolume(0.1)">Volume: 10%</button>
+        <button onclick="changeVolume(0.5)">Volume: 50%</button>
+        <button onclick="changeVolume(1.0)">Volume: 100%</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Instructions</h2>
+        <ol>
+            <li>Add your sound files to <code>assets/sounds/</code>:
+                <ul>
+                    <li><code>hover.mp3</code> - plays when hovering over buttons</li>
+                    <li><code>click.mp3</code> - plays when clicking buttons</li>
+                </ul>
+            </li>
+            <li>Refresh this page and test the buttons above</li>
+            <li>Open browser console (F12) to see debug messages</li>
+        </ol>
+    </div>
+
+    <script src="soundManager.js"></script>
+    <script>
+        // Initialize sounds when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initUISounds();
+            updateStatus();
+        });
+
+        function updateStatus() {
+            const statusEl = document.getElementById('status');
+            statusEl.innerHTML = `
+                <p><strong>Sound Manager Initialized:</strong> ${soundManager.initialized ? '✅ Yes' : '❌ No'}</p>
+                <p><strong>Sounds Enabled:</strong> ${soundManager.enabled ? '✅ Yes' : '❌ No'}</p>
+                <p><strong>Volume:</strong> ${Math.round(soundManager.volume * 100)}%</p>
+                <p><small>Check browser console (F12) for detailed logs</small></p>
+            `;
+        }
+
+        function toggleSounds() {
+            soundManager.toggle();
+            updateStatus();
+            alert(`Sounds ${soundManager.enabled ? 'enabled' : 'disabled'}`);
+        }
+
+        function changeVolume(vol) {
+            soundManager.setVolume(vol);
+            updateStatus();
+            alert(`Volume set to ${Math.round(vol * 100)}%`);
+        }
+    </script>
+</body>
+</html>
