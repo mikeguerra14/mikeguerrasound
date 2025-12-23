@@ -79,9 +79,9 @@ body::before {
         0 0,
         0 0,
         0 0,
-        0 0,
-        0 0,
-        0 0;
+        center,
+        center,
+        center;
     z-index: -1;
     animation: gridShift 20s linear infinite, colorPulse 4s ease-in-out infinite;
 }
@@ -976,7 +976,7 @@ body::before {
 }
 
 .services-list li:before {
-    content: ">";
+    content: '>';
     position: absolute;
     left: 0;
     color: #00ffff;
