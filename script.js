@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initWaveformCanvas();
     initNavbar();
     createParticles();
+    initUISounds();
 });
 
 // Scroll animations using Intersection Observer
