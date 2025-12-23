@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initWaveformCanvas();
     initSkillBars();
     initNavbar();
+    createParticles();
 });
 
 // Scroll animations using Intersection Observer
@@ -162,6 +163,3 @@ function createParticles() {
         hero.appendChild(particle);
     }
 }
-
-// Initialize particles
-createParticles();
