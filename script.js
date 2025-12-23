@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize animations
     initScrollAnimations();
     initWaveformCanvas();
-    initSkillBars();
     initNavbar();
     createParticles();
 });
@@ -97,29 +96,6 @@ function initWaveformCanvas() {
     }
     
     animate();
-}
-
-// Animate skill bars
-function initSkillBars() {
-    const skillBars = document.querySelectorAll('.skill-bar');
-    
-    const observerOptions = {
-        threshold: 0.5
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const skillLevel = bar.getAttribute('data-skill');
-                bar.style.width = skillLevel + '%';
-            }
-        });
-    }, observerOptions);
-    
-    skillBars.forEach(bar => {
-        observer.observe(bar);
-    });
 }
 
 // Navbar scroll effect
