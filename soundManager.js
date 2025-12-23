@@ -38,11 +38,11 @@ class SoundManager {
 
         // Handle load errors gracefully
         this.sounds.hover.addEventListener('error', () => {
-            console.warn('Hover sound file not found. Please add hover.mp3 to assets/sounds/');
+            console.warn('Hover sound file not found. Please add hover.mp3, hover.wav, or hover.ogg to assets/sounds/');
         });
 
         this.sounds.click.addEventListener('error', () => {
-            console.warn('Click sound file not found. Please add click.mp3 to assets/sounds/');
+            console.warn('Click sound file not found. Please add click.mp3, click.wav, or click.ogg to assets/sounds/');
         });
 
         this.initialized = true;
@@ -59,7 +59,12 @@ class SoundManager {
         if (!sound) return;
 
         // Reset sound to beginning if already playing
-        sound.currentTime = 0;
+        try {
+            sound.currentTime = 0;
+        } catch (error) {
+            // Ignore errors if sound hasn't loaded yet
+            console.debug(`Could not reset sound: ${error.message}`);
+        }
         
         // Play sound and handle any playback errors
         sound.play().catch(error => {

@@ -80,6 +80,7 @@
         <button onclick="changeVolume(0.1)">Volume: 10%</button>
         <button onclick="changeVolume(0.5)">Volume: 50%</button>
         <button onclick="changeVolume(1.0)">Volume: 100%</button>
+        <div id="control-feedback" style="margin-top: 15px; padding: 10px; background: rgba(78, 205, 196, 0.2); border-radius: 5px; display: none;"></div>
     </div>
 
     <div class="test-section">
@@ -117,13 +118,22 @@
         function toggleSounds() {
             soundManager.toggle();
             updateStatus();
-            alert(`Sounds ${soundManager.enabled ? 'enabled' : 'disabled'}`);
+            showFeedback(`Sounds ${soundManager.enabled ? 'enabled' : 'disabled'}`);
         }
 
         function changeVolume(vol) {
             soundManager.setVolume(vol);
             updateStatus();
-            alert(`Volume set to ${Math.round(vol * 100)}%`);
+            showFeedback(`Volume set to ${Math.round(vol * 100)}%`);
+        }
+
+        function showFeedback(message) {
+            const feedbackEl = document.getElementById('control-feedback');
+            feedbackEl.textContent = message;
+            feedbackEl.style.display = 'block';
+            setTimeout(() => {
+                feedbackEl.style.display = 'none';
+            }, 2000);
         }
     </script>
 </body>
