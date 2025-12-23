@@ -20,8 +20,8 @@ class SoundManager {
      */
     init(soundPaths = {}) {
         const defaultPaths = {
-            hover: 'assets/sounds/hover.mp3',
-            click: 'assets/sounds/click.mp3'
+            hover: 'assets/sounds/hover.wav',
+            click: 'assets/sounds/click.wav'
         };
 
         const paths = { ...defaultPaths, ...soundPaths };
