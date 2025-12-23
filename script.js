@@ -61,11 +61,11 @@ function initWaveformCanvas() {
         height = canvas.height = window.innerHeight;
     });
     
-    // Waveform parameters
+    // Waveform parameters - Cyberpunk colors
     const waves = [
-        { amplitude: 30, frequency: 0.02, speed: 0.03, color: 'rgba(255, 107, 107, 0.3)' },
-        { amplitude: 40, frequency: 0.015, speed: 0.02, color: 'rgba(78, 205, 196, 0.3)' },
-        { amplitude: 25, frequency: 0.025, speed: 0.025, color: 'rgba(255, 159, 64, 0.3)' }
+        { amplitude: 30, frequency: 0.02, speed: 0.03, color: 'rgba(0, 255, 255, 0.5)' },
+        { amplitude: 40, frequency: 0.015, speed: 0.02, color: 'rgba(255, 0, 255, 0.5)' },
+        { amplitude: 25, frequency: 0.025, speed: 0.025, color: 'rgba(0, 255, 0, 0.3)' }
     ];
     
     let time = 0;
@@ -126,17 +126,25 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add floating particles effect
+// Add floating particles effect - Data stream style
 function createParticles() {
     const hero = document.querySelector('.hero');
     if (!hero) return;
     
-    for (let i = 0; i < 20; i++) {
+    // Create data stream particles
+    for (let i = 0; i < 30; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.style.left = Math.random() * 100 + '%';
         particle.style.animationDelay = Math.random() * 5 + 's';
         particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        
+        // Alternate colors for variety
+        if (Math.random() > 0.5) {
+            particle.style.background = 'linear-gradient(to bottom, transparent, #ff00ff, transparent)';
+            particle.style.boxShadow = '0 0 10px #ff00ff';
+        }
+        
         hero.appendChild(particle);
     }
 }
