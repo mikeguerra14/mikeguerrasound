@@ -614,54 +614,6 @@ body {
     color: #e0e0e0;
 }
 
-.services-list {
-    max-width: 800px;
-    margin: 0 auto 4rem;
-}
-
-.services-list h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: #fff;
-    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.services-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.services-list li {
-    font-size: 1.1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid rgba(255, 107, 107, 0.2);
-    color: #e0e0e0;
-    position: relative;
-    padding-left: 2rem;
-    transition: all 0.3s ease;
-}
-
-.services-list li:hover {
-    color: #fff;
-    padding-left: 2.5rem;
-}
-
-.services-list li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #ff6b6b;
-    font-weight: bold;
-    font-size: 1.3rem;
-}
-
-.services-list li:last-child {
-    border-bottom: none;
-}
-
 .cta-section {
     max-width: 800px;
     margin: 0 auto;
