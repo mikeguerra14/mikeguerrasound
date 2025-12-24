@@ -162,7 +162,7 @@ body {
 
 /* Reusable animated gradient text class */
 .animated-gradient-text {
-    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #f7b731, #ff6b6b);
+    background: linear-gradient(90deg, #a855f7, #3b82f6, #06b6d4, #8b5cf6, #a855f7);
     background-size: 300% 100%;
     background-clip: text;
     -webkit-background-clip: text;
