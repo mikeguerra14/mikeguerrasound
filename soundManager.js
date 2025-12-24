@@ -10,7 +10,7 @@ class SoundManager {
             click: null
         };
         this.enabled = true;
-        this.volume = 0.1; // Default volume (10%)
+        this.volume = 0.3; // Default volume (30%)
         this.initialized = false;
     }
 
