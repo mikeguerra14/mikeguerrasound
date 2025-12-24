@@ -146,11 +146,39 @@ body {
 
 .title-word {
     display: inline-block;
-    color: #ffffff;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.5);
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes gradientMove {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Reusable animated gradient text class */
+.animated-gradient-text {
+    background: linear-gradient(90deg, #a855f7, #3b82f6, #06b6d4, #8b5cf6, #a855f7);
+    background-size: 300% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 8s ease infinite;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .animated-gradient-text,
+    .title-word {
+        animation: none;
+        background: none;
+        -webkit-text-fill-color: inherit;
+        color: #ffffff;
+    }
 }
 
 .hero-subtitle {
@@ -305,9 +333,7 @@ body {
     font-size: 3rem;
     text-align: center;
     margin-bottom: 4rem;
-    color: #fff;
     font-weight: 700;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .about-content {
@@ -557,8 +583,6 @@ body {
     margin-bottom: 1rem;
     font-weight: 700;
     line-height: 1.2;
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 .category-subtitle {
@@ -580,8 +604,6 @@ body {
 .category-description h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
-    color: #fff;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 .category-description p {
@@ -605,7 +627,6 @@ body {
 .cta-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #fff;
 }
 
 .cta-section p {
@@ -715,7 +736,6 @@ body {
 .media-showcase h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #ffffff;
     text-align: center;
 }
 
