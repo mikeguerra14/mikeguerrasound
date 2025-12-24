@@ -175,7 +175,9 @@ body {
     .animated-gradient-text,
     .title-word {
         animation: none;
-        background-position: 0% 50%;
+        background: none;
+        -webkit-text-fill-color: inherit;
+        color: #ffffff;
     }
 }
 
