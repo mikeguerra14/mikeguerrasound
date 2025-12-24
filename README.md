@@ -1,6 +1,12 @@
 # mikeguerrasound
 Sound Design Portfolio
 
+🌐 **Live Website:** https://mikeguerra14.github.io/mikeguerrasound/
+
+## About
+
+Professional sound design portfolio showcasing work in film sound design, game audio, technical audio, and foley/SFX production.
+
 ## 🔊 UI Sounds Feature
 
 This website now includes an interactive UI sound system! The system plays audio feedback when users hover over or click buttons and links throughout the site.
@@ -28,4 +34,19 @@ This website now includes an interactive UI sound system! The system plays audio
 - `UI_SOUNDS_GUIDE.md` - Comprehensive documentation
 
 For more details, see [UI_SOUNDS_GUIDE.md](UI_SOUNDS_GUIDE.md).
+
+## 🚀 Deployment
+
+This website is automatically deployed to GitHub Pages via GitHub Actions whenever changes are pushed to the `main` branch.
+
+### Deployment Process
+
+1. Push changes to the `main` branch
+2. GitHub Actions workflow automatically triggers
+3. Site is built and deployed to GitHub Pages
+4. Live site is accessible at: https://mikeguerra14.github.io/mikeguerrasound/
+
+### Manual Deployment
+
+You can also manually trigger deployment from the Actions tab in GitHub by running the "Deploy to GitHub Pages" workflow.
 
