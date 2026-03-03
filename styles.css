@@ -964,11 +964,138 @@ body {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    background: #f8f9fa;
+    background: #1a1a2e;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-container h3 {
+    color: #fff;
+    padding: 1rem;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.video-description {
+    color: #ccc;
+    padding: 1rem;
+    margin: 0;
+    background: #16213e;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.project-content {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.project-link {
+    position: relative;
+    display: block;
+    text-decoration: none;
+}
+
+.project-image {
+    flex: 0 0 40%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 8px;
+    object-fit: contain;
+    transition: filter 0.3s ease;
+}
+
+.project-link:hover .project-image {
+    filter: blur(8px);
+}
+
+.link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-link:hover .link-overlay {
+    opacity: 1;
+}
+
+.link-button {
+    background: #00d4ff;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover .link-button {
+    background: #00f0ff;
+    transform: scale(1.05);
+}
+
+.link-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-link:hover .link-overlay {
+    opacity: 1;
+}
+
+.link-button {
+    background: #00d4ff;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover .link-button {
+    background: #00f0ff;
+    transform: scale(1.05);
+}
+
+.project-content .video-description {
+    flex: 0 0 60%;
+    padding: 0;
+    background: transparent;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .video-container iframe {
